@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DotNetTrainingBatch2.MiddlewareApp.Database/DotNetTrainingBatch2.MiddlewareApp.Database.csproj" />
+  <Project Path="DotNetTrainingBatch2.MiddlewareApp/DotNetTrainingBatch2.MiddlewareApp.csproj" />
+</Solution>

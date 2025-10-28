@@ -1,0 +1,19 @@
+﻿@using DotNetTrainingBatch2.MiddlewareApp.Database.AppDbContextModels
+@using Newtonsoft.Json
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+	ViewData["Title"] = "Home Page";
+	string fullName = "Guest";
+
+	if (HttpContextAccessor?.HttpContext?.Session.GetString("Login") != null)
+	{
+		var str = HttpContextAccessor.HttpContext.Session.GetString("Login");
+		var user = JsonConvert.DeserializeObject<TblUser>(str);
+		fullName = user.FullName!;
+	}
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome, @fullName</h1>
+	<p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
